@@ -1,0 +1,16 @@
+##Code for dates with expiry dates
+
+from datetime import datetime, timedelta 
+
+def get_status_color(expiry_date):
+    today = datetime.now().date()
+    thirty_days_from_now = today + timedelta(days=30)
+
+    if expiry_date < today:
+        return "Red"
+    elif expiry_date == today:
+        return "Red"
+    elif expiry_date <= thirty_days_from_now:
+        return "Yellow"
+    else:
+        return "Green"
